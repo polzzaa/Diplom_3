@@ -46,17 +46,20 @@ def create_user():
 @pytest.fixture
 def login(driver, create_user):
     base = BasePage(driver)
-    base.click_on_element(MainPageLocators.personal_account_button)
-    base.send_keys(PersonalAccountLocators.email_input, create_user[0]["email"])
-    base.send_keys(PersonalAccountLocators.password_input, create_user[0]["password"])
-    base.click_on_element(PersonalAccountLocators.login_button)
+    base.click_on_element(MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
+    base.send_keys(PersonalAccountLocators.EMAIL_INPUT, create_user[0]["email"])
+    base.send_keys(PersonalAccountLocators.PASSWORD_INPUT, create_user[0]["password"])
+    base.click_on_element(PersonalAccountLocators.LOGIN_BUTTON)
 
 @pytest.fixture
 def create_order(driver):
     main_page =MainPage(driver)
     main_page.bun_drag_drop()
     main_page.click_on_place_order_but()
+    main_page.check_invisibility(MainPageLocators.DEFAULT_NUMBER_ORDER)
+    number = main_page.get_text(MainPageLocators.ORDER_NUMBER_POPUP)
     main_page.close_popup_new_order()
+    return number
 
 
 

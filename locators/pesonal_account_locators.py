@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
 
 class PersonalAccountLocators:
-    login_button = [By.XPATH, "//button[text()='Войти']"]  #Кнопка Войти
-    email_input = [By.NAME, "name"]  #Поле ввода email
-    password_input = [By.NAME, "Пароль"]  #Поле ввода пароля
-    order_history_button = [By.XPATH, "//a[text()='История заказов']"] #Кнопка "История заказов"
-    logout_button = [By.XPATH, "//button[text()='Выход']"] #Кнопка "Выход"
-    order_number = [By.XPATH, "//p[@class='text text_type_digits-default']"] #Номер заказа в истории заказов
+    LOGIN_BUTTON = [By.XPATH, "//button[text()='Войти']"]  #Кнопка Войти
+    EMAIL_INPUT = [By.NAME, "name"]  #Поле ввода email
+    PASSWORD_INPUT = [By.NAME, "Пароль"]  #Поле ввода пароля
+    ORDER_HISTORY_BUTTON = [By.XPATH, "//a[text()='История заказов']"] #Кнопка "История заказов"
+    LOGOUT_BUTTON = [By.XPATH, "//button[text()='Выход']"] #Кнопка "Выход"
+    ORDER_NUMBER = [By.XPATH, "//p[@class='text text_type_digits-default']"] #Номер заказа в истории заказов

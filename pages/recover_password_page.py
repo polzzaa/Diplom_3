@@ -8,7 +8,7 @@ class RecoverPasswordPage(BasePage):
 
     @allure.step('Клик на кнопку "Восстановить пароль"')
     def click_on_recover_password_button(self):
-        self.click_on_element(RecoverPassLocators.recover_password_button)
+        self.click_on_element(RecoverPassLocators.RECOVER_PASSWORD_BUTTON)
 
     @allure.step('Проверка открытия окна "Восстановление пароля"')
     def check_recovery_pass_page_open(self):
@@ -16,20 +16,19 @@ class RecoverPasswordPage(BasePage):
 
     @allure.step('Заполнение поля email и клик на кнопку "Восстановить"')
     def set_email_and_click_on_recover_button(self, email):
-        self.send_keys(RecoverPassLocators.email_field, email)
-        self.click_on_element(RecoverPassLocators.recover_button)
+        self.send_keys(RecoverPassLocators.EMAIL_FIELD, email)
+        self.click_on_element(RecoverPassLocators.RECOVER_BUTTON)
 
     @allure.step('Проверка появления кнопки "Сохранить"')
     def check_update_password_page(self):
-        assert self.check_element(RecoverPassLocators.save_button)
+        assert self.check_element(RecoverPassLocators.SAVE_BUTTON)
 
     @allure.step('Клик на кнопку показать/скрыть пароль')
     def click_on_show_password_but(self):
-        self.wait_for_element_to_be_clickable(RecoverPassLocators.show_pass_button)
-        self.click_on_element(RecoverPassLocators.show_pass_button)
+        self.click_on_element(RecoverPassLocators.SHOW_PASS_BUTTON)
 
     @allure.step('Проверка активности поля "Пароль"')
     def check_show_pass(self):
-        assert self.check_element(RecoverPassLocators.active_pass_field)
+        assert self.check_element(RecoverPassLocators.ACTIVE_PASS_FIELD)
 
 
